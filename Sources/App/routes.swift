@@ -18,7 +18,7 @@ func routes(_ app: Application) throws {
     }
 
     app.get("expenses", ":userId") { req in
-        guard let userId = req.parameters.get("userId") else {
+        guard let _ = req.parameters.get("userId") else {
             throw Abort(.badRequest)
         }
         return expenses
